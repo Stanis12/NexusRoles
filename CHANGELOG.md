@@ -1,3 +1,9 @@
+# 4.1.1
+
+- Rebranded source namespaces, plugin implementation, Unity asset project, and asset bundle as NexusRoles.
+- Updated repository metadata and project credits for Stanis12/NexusRoles.
+- Kept the original BepInEx plugin GUID and configuration keys for upgrade compatibility.
+
 # 4.1.0
 
 - Renamed the displayed mod to NexusRoles while preserving its plugin GUID and existing configuration keys.

@@ -4,13 +4,13 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$project = Join-Path $repoRoot 'src\NuageRoles.Plugin\NuageRoles.Plugin.csproj'
+$project = Join-Path $repoRoot 'src\NexusRoles.Plugin\NexusRoles.Plugin.csproj'
 $manifestPath = Join-Path $repoRoot 'manifest.json'
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
-$outputDll = Join-Path $repoRoot 'src\NuageRoles.Plugin\bin\Release\netstandard2.1\NexusRoles.Plugin.dll'
-$bundle = Join-Path $repoRoot 'assets\bundles\NuageRoles_assets'
+$outputDll = Join-Path $repoRoot 'src\NexusRoles.Plugin\bin\Release\netstandard2.1\NexusRoles.Plugin.dll'
+$bundle = Join-Path $repoRoot 'assets\bundles\NexusRoles_assets'
 $icon = Join-Path $repoRoot 'assets\icon.png'
-$fontNotice = Join-Path $repoRoot 'assets\unity\NuageRolesAssetBundle\Assets\NuageRoles\SourceArt\Gui\NotoSans-OFL.txt'
+$fontNotice = Join-Path $repoRoot 'assets\unity\NexusRolesAssetBundle\Assets\NexusRoles\SourceArt\Gui\NotoSans-OFL.txt'
 $releaseDir = Join-Path $repoRoot 'release'
 $zipPath = Join-Path $releaseDir ("{0}-{1}.zip" -f $manifest.name, $manifest.version_number)
 $stage = Join-Path ([IO.Path]::GetTempPath()) ('NexusRoles-' + [guid]::NewGuid().ToString('N'))
@@ -41,7 +41,7 @@ try {
     $pluginsDir = Join-Path $stage 'plugins'
     New-Item -ItemType Directory -Path $pluginsDir | Out-Null
     Copy-Item -LiteralPath $outputDll -Destination (Join-Path $pluginsDir 'NexusRoles.Plugin.dll')
-    Copy-Item -LiteralPath $bundle -Destination (Join-Path $pluginsDir 'NuageRoles_assets')
+    Copy-Item -LiteralPath $bundle -Destination (Join-Path $pluginsDir 'NexusRoles_assets')
 
     if (Test-Path -LiteralPath $zipPath) { Remove-Item -LiteralPath $zipPath }
     [IO.Compression.ZipFile]::CreateFromDirectory(

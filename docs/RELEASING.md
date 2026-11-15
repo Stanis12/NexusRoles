@@ -15,8 +15,8 @@ the mod in multiplayer.
 Build and package from PowerShell at the repository root:
 
 ```powershell
-dotnet restore src/NuageRoles.Plugin/NuageRoles.Plugin.csproj --locked-mode
-dotnet build src/NuageRoles.Plugin/NuageRoles.Plugin.csproj -c Release --no-restore -p:CopyFilesToPluginOutputDirectoryOnBuild=false
+dotnet restore src/NexusRoles.Plugin/NexusRoles.Plugin.csproj --locked-mode
+dotnet build src/NexusRoles.Plugin/NexusRoles.Plugin.csproj -c Release --no-restore -p:CopyFilesToPluginOutputDirectoryOnBuild=false
 ./tools/package.ps1 -SkipBuild
 ```
 
@@ -27,12 +27,10 @@ plugin DLL and bundle under `plugins/`.
 
 ## 2. Push the source to GitHub with Git
 
-Open the GitHub repository that should host this standalone mod. If you have not
-created it yet, create an empty repository named `NexusRoles` under the account
-or organization that will own the project. Do not initialize it with a README,
-license, or `.gitignore`, because those files already exist locally. Before the
-first commit, set `website_url` in `manifest.json` to this repository's URL and
-regenerate the Thunderstore archive after changing it.
+The GitHub repository already exists at
+`https://github.com/Stanis12/NexusRoles`, and this local checkout is configured
+to use it as `origin`. Confirm the checkout points to the intended repository
+before pushing.
 
 From PowerShell in this repository folder:
 
@@ -40,23 +38,20 @@ From PowerShell in this repository folder:
 git status
 git add .
 git status
-git commit -m "Prepare NexusRoles 4.1.0 for release"
-git branch -M main
-git remote add origin https://github.com/OWNER/NexusRoles.git
-git push -u origin main
+git commit -m "Rebrand NexusRoles 4.1.1"
+git push origin main
 ```
 
-Replace `OWNER` with the GitHub account or organization name. `git status` after
-`git add .` is a review step: confirm `local-only/`, build outputs, and the
-Thunderstore ZIP are absent before committing. The ignored `local-only/` folder
-contains the old user-supplied image and historical patch; neither is part of
-the public repository.
+`git status` after `git add .` is a review step: confirm `local-only/`, build
+outputs, and the Thunderstore ZIP are absent before committing. The ignored
+`local-only/` folder contains the old user-supplied image, historical patch, and
+previous archive; none are part of the public repository.
 
-If `origin` is already configured, update it instead of adding it again:
+Verify the remote before pushing:
 
 ```powershell
 git remote -v
-git remote set-url origin https://github.com/OWNER/NexusRoles.git
+git remote get-url origin
 ```
 
 ## 3. Create a GitHub Release
@@ -64,13 +59,13 @@ git remote set-url origin https://github.com/OWNER/NexusRoles.git
 Tag the version already present in `manifest.json` and `CHANGELOG.md`:
 
 ```powershell
-git tag v4.1.0
-git push origin v4.1.0
+git tag v4.1.1
+git push origin v4.1.1
 ```
 
 On GitHub, open the repository's **Releases** page, choose **Draft a new
-release**, select tag `v4.1.0`, copy the `4.1.0` entry from `CHANGELOG.md`,
-attach `release/NexusRoles-4.1.0.zip`, review the page, then publish the release.
+release**, select tag `v4.1.1`, copy the `4.1.1` entry from `CHANGELOG.md`,
+attach `release/NexusRoles-4.1.1.zip`, review the page, then publish the release.
 
 For later updates, increment `version_number` in `manifest.json`, update the
 top entry in `CHANGELOG.md`, run the packaging script, commit and push, then
@@ -79,8 +74,9 @@ create and push the matching `vX.Y.Z` tag. Never reuse a published tag.
 ## 4. Upload to Thunderstore
 
 Use the Thunderstore package upload page with the intended team/owner account.
-Upload the same `release/NexusRoles-4.1.0.zip` and verify the package name,
+Upload the same `release/NexusRoles-4.1.1.zip` and verify the package name,
 description, dependencies, icon, README rendering, and version before
-submitting. Since the manifest package name is `NexusRoles`, this is a new
-Thunderstore package identity; it will not update `NuageRoles` automatically.
+submitting. Confirm which Thunderstore team owns the `NexusRoles` package before
+uploading; a package name change does not transfer ownership of an existing
+Thunderstore listing.
 
