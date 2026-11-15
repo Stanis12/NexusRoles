@@ -26,7 +26,7 @@ namespace NexusRoles
         // Keep the legacy GUID so BepInEx treats this as the existing plugin and reuses its config.
         public const string PluginGuid = "com.theohay.nuageroles";
         public const string PluginName = "NexusRoles";
-        public const string PluginVersion = "4.1.1";
+        public const string PluginVersion = "4.1.2";
         public const string AssetBundleName = "NexusRoles_assets";
         private const string ManaUpgradeStatKey = "playerUpgradeManaRegeneration";
         private const string ScoutUpgradeStatKey = "playerUpgradeScoutCooldownReduction";

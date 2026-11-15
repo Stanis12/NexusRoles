@@ -4,7 +4,7 @@ NexusRoles is a maintained fork of [REPO Roles Classic](https://thunderstore.io/
 
 Source repository: [Stanis12/NexusRoles](https://github.com/Stanis12/NexusRoles).
 
-NexusRoles keeps that role-based gameplay foundation, updates the mod for the current R.E.P.O. modding stack, expands configuration, includes an Engineer network-ownership/charge verification change, and ships a recreated `NexusRoles_assets` bundle. In-game role text supports English, Russian, and Ukrainian, selected from the system language. Engineer charging still needs confirmation in a multiplayer game.
+NexusRoles keeps that role-based gameplay foundation, updates the mod for the current R.E.P.O. modding stack, expands configuration, and ships a recreated `NexusRoles_assets` bundle. Engineer charge requests are routed to the held item's current Photon controller. In-game role text supports English, Russian, and Ukrainian, selected from the system language. The Engineer multiplayer change still needs in-game confirmation.
 
 ## Quick Info
 

@@ -38,7 +38,7 @@ From PowerShell in this repository folder:
 git status
 git add .
 git status
-git commit -m "Rebrand NexusRoles 4.1.1"
+git commit -m "Fix Engineer client charging in NexusRoles 4.1.2"
 git push origin main
 ```
 
@@ -59,13 +59,13 @@ git remote get-url origin
 Tag the version already present in `manifest.json` and `CHANGELOG.md`:
 
 ```powershell
-git tag v4.1.1
-git push origin v4.1.1
+git tag v4.1.2
+git push origin v4.1.2
 ```
 
 On GitHub, open the repository's **Releases** page, choose **Draft a new
-release**, select tag `v4.1.1`, copy the `4.1.1` entry from `CHANGELOG.md`,
-attach `release/NexusRoles-4.1.1.zip`, review the page, then publish the release.
+release**, select tag `v4.1.2`, copy the `4.1.2` entry from `CHANGELOG.md`,
+attach `release/NexusRoles-4.1.2.zip`, review the page, then publish the release.
 
 For later updates, increment `version_number` in `manifest.json`, update the
 top entry in `CHANGELOG.md`, run the packaging script, commit and push, then
@@ -74,7 +74,7 @@ create and push the matching `vX.Y.Z` tag. Never reuse a published tag.
 ## 4. Upload to Thunderstore
 
 Use the Thunderstore package upload page with the intended team/owner account.
-Upload the same `release/NexusRoles-4.1.1.zip` and verify the package name,
+Upload the same `release/NexusRoles-4.1.2.zip` and verify the package name,
 description, dependencies, icon, README rendering, and version before
 submitting. Confirm which Thunderstore team owns the `NexusRoles` package before
 uploading; a package name change does not transfer ownership of an existing

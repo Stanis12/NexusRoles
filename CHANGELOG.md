@@ -1,3 +1,9 @@
+# 4.1.2
+
+- Engineer charge requests now run on the held item's current Photon controller instead of changing battery state immediately after an ownership request.
+- Remote charges reserve the configured stamina until the controller replies; rejected or timed-out requests refund the reservation.
+- Preserved the existing plugin GUID and config keys.
+
 # 4.1.1
 
 - Rebranded source namespaces, plugin implementation, Unity asset project, and asset bundle as NexusRoles.
