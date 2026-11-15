@@ -1,0 +1,12 @@
+{
+  "name": "NexusRoles",
+  "version_number": "4.1.0",
+  "website_url": "https://github.com/TheoHay/NuageREPO",
+  "description": "R.E.P.O. role mod with 13 roles and English, Russian, and Ukrainian text.",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2305",
+    "Zehs-REPOLib-4.2.0",
+    "REPOModding-MenuLib-2.6.2",
+    "REPOModding-REPOConfig-1.2.7"
+  ]
+}

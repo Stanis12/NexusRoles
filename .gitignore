@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+**/Library/
+**/Temp/
+**/Logs/
+**/UserSettings/
+**/.vs/
+/local-only/
+/release/*.zip
+/plugins/
+*.user
+*.suo
+.DS_Store

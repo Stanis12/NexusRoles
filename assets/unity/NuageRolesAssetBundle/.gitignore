@@ -1,0 +1,31 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+.vs/
+*.csproj
+*.sln
+*.user
+*.pidb
+*.suo
+*.userprefs
+
+# Local-only game assemblies imported for authoring typed R.E.P.O. assets.
+Assets/NuageRoles/ThirdParty/
+Assets/NuageRoles/ThirdParty.meta
+
+# Imported source-art copies. Canonical replacement PNGs live under
+# mods/NuageRoles/assets/source/textures and are copied in by Setup Workspace.
+Assets/NuageRoles/SourceArt/**/*.png
+Assets/NuageRoles/SourceArt/**/*.png.meta
+
+# Generated bundle authoring assets. Recreate with Nuage Roles/2. Recreate Assets.
+Assets/NuageRoles/Generated/
+Assets/NuageRoles/Generated.meta
+
+# Unity build cache output. Dist bundles can be regenerated.
+AssetBundles/Build/
+AssetBundles/Dist/
